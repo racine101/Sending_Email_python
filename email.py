@@ -14,14 +14,23 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 
 server.ehlo()
 
+#opening the file where the password for the senders email is stored
+#and store it into a variable name password
 with open("PATH/password.txt", "r") as f:
     password = f.read()
 
+
+#Connecting to the gmail SMTP server 
+#If you use a different email, look up the required SMTP server 
 server.connect("smtp.gmail.com",587)
 server.ehlo()
 server.starttls()
+
+#Login to the senders email
 server.login('Senders.email@gmail.com', password)
 
+
+#Constructing a basic Heading for the email 
 msg =MIMEMultipart()
 msg['From'] = 'NAME'
 msg['To'] = 'Recipient.Email@gmail.com'
