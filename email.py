@@ -7,6 +7,8 @@ from email.mime.multipart import MIMEMultipart
 
 
 #variable name server, which will store the specific server we are going to use 
+#Note: this is current setup is for gmail, you can find info about your email provider 
+#      online. Browse for SMTP of the the email provider you use
 server = smtplib.SMTP('smtp.gmail.com', 587)
 
 
